@@ -44,16 +44,21 @@
 					<li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>
 					@if(Route::has('login'))
 			@auth
-			<li class="nav-item"><a style="background-color: aqua;" href="{{route('myappoint')}}" class="nav-link">My Appointments</a></li>
+			<li class="nav-item"><a href="{{route('myappoint')}}" class="nav-link">My Appointments</a></li>
 
 			<form action="{{ route('logout') }}" method="post">
 				@csrf
 				<li class="nav-item"><a href="{{route('logout')}}" class="nav-link"><button type="submit" class="btn btn-secondary">LOGOUT</button></a></li>
 			</form>
 			@else
-
-			<li class="nav-item"><a href="{{route('login')}}" class="btn btn-secondary py-2 px-3">Login</a></li>
-			<li class="nav-item"><a href="{{ route('register')}}" class="btn btn-secondary py-2 px-3">Register</a></li>
+			
+			<li class="nav-item mx-5">
+				<li class="nav-item mt-1 mx-1"><a href="{{route('login')}}" class="btn btn-secondary py-2 px-3">Login</a></li>
+				<li class="nav-item mt-1"><a href="{{ route('register')}}" class="btn btn-secondary py-2 px-3">Register</a></li>
+			</li>
+			
+	
+			
 			@endauth
 			@endif
 				</ul>
