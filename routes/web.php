@@ -32,6 +32,20 @@ route::get('/appointments',[patientcontroller::class,'showhospitalvaccineappo'])
 route::get('/contact',[patientcontroller::class,'contactpage'])->name('contact');
 route::get('/reports',[patientcontroller::class,'yourreports'])->name('reports');
 
+Route::get('/home',[patientcontroller::class,'showhospitalvaccinedata'])->name('patient');
+route::get('/about',[patientcontroller::class,'showhospitalvaccine'])->name('about');
+route::get('/hospital',[patientcontroller::class,'showhospital'])->name('hospital');
+route::get('/departments',[patientcontroller::class,'departpage'])->name('depart');
+route::get('/appointments',[patientcontroller::class,'showhospitalvaccineappo'])->name('appoint');
+route::get('/contact',[patientcontroller::class,'contactpage'])->name('contact');
+route::post('/home',[patientcontroller::class,'appoint'])->name('appointment');
+route::post('/appointments',[patientcontroller::class,'appoint'])->name('appointment');
+route::get('/myappointments',[patientcontroller::class,'myappoint'])->name('myappoint');
+
+
+
+
+
 
 // Route::get('/hospitals',[hospitalcontroller::class,'showvaccine']);
 // Route::get('/',[hospitalcontroller::class,'vaccinedata']);
@@ -73,6 +87,11 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('auth' , 'role:admin')->group(function () {
     Route::get('/admindashboard', [admincontroller::class,'admindashboard'])->name('admin-dashboard');
+    Route::get('/list-of-patient-detail', [admincontroller::class,'listofpatient'])->name('list-of-patient');
+    Route::get('/list-of-hospital-detail', [admincontroller::class,'listofhospital'])->name('list-of-hospital');
+    Route::get('/all-vaccine', [admincontroller::class,'allvaccine'])->name('allvaccine');
+    Route::get('/all-reports', [admincontroller::class,'allreports'])->name('allreports');
+    
 });
 Route::middleware('auth', 'role:hospital')->group(function () {
     Route::get('/hospitaldashboard', [hospitalcontroller::class,'hospitaldashboard'])->name('hospital-dashboard');
@@ -90,12 +109,12 @@ Route::middleware('auth', 'role:hospital')->group(function () {
 });
 Route::middleware('auth','role:patient')->group(function () {
     // Route::get('/home',[patientcontroller::class,'showhospitaldata'])->name('patient');
-    Route::get('/home',[patientcontroller::class,'showhospitalvaccinedata'])->name('patient');
-    route::get('/about',[patientcontroller::class,'showhospitalvaccine'])->name('about');
-    route::get('/hospital',[patientcontroller::class,'showhospital'])->name('hospital');
-    route::get('/departments',[patientcontroller::class,'departpage'])->name('depart');
-    route::get('/appointments',[patientcontroller::class,'showhospitalvaccineappo'])->name('appoint');
-    route::get('/contact',[patientcontroller::class,'contactpage'])->name('contact');
+    // Route::get('/home',[patientcontroller::class,'showhospitalvaccinedata'])->name('patient');
+    // route::get('/about',[patientcontroller::class,'showhospitalvaccine'])->name('about');
+    // route::get('/hospital',[patientcontroller::class,'showhospital'])->name('hospital');
+    // route::get('/departments',[patientcontroller::class,'departpage'])->name('depart');
+    // route::get('/appointments',[patientcontroller::class,'showhospitalvaccineappo'])->name('appoint');
+    // route::get('/contact',[patientcontroller::class,'contactpage'])->name('conta ct');
     route::post('/home',[patientcontroller::class,'appoint'])->name('appointment');
     route::post('/appointments',[patientcontroller::class,'appoint'])->name('appointment');
     route::get('/myappointments',[patientcontroller::class,'myappoint'])->name('myappoint');

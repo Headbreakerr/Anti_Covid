@@ -22,9 +22,9 @@
 									<p>{{$h->phone}}</p>
 									@if(Route::has('login'))
 									@auth
-									<button type="button"><a href="{{route('appoint')}}" class="btn btn-outline-primary mr-md-3 mb-md-0 mb-2">Book Appointment</a></button>
+									<button type="button" class="btn btn-primary" ><a href="{{route('appoint')}}" class="btn btn-primary ">Book Appointment</a></button>
 									@else
-									<button type="button"><a href="{{route('register')}}" class="btn btn-outline-primary mr-md-3 mb-md-0 mb-2">Book Appointment</a></button>
+									<button type="button" class="btn btn-primary" ><a href="{{route('register')}}" class="btn btn-primary ">Book Appointment</a></button>
 									@endauth
 									@endif
 									<ul class="ftco-social text-center">
