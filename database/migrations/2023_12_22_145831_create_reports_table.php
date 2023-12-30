@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('Cholestrol');
             $table->string('BP');
             $table->string('status');
-            $table->integer('user_id')->default(1);
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('patient_name')->default();
+            $table->foreign('patient_name')->references('name')->on('users');
             $table->timestamps();
         });
     }
