@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->enum('role',['admin','hospital','patient'])->default('patient');
             $table->enum('status',['active','inactive'])->default('active');
+            $table->string('image')->default(0);
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();

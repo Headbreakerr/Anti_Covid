@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\vaccine;
 use App\Models\appointment;
@@ -112,6 +113,27 @@ class patientcontroller extends Controller
     public function yourreports(){
         return view('main-website.reports');
     }
+
+    public function addhospital(Request $req){
+        $hospital = new User();
+        $hospital->name = $req->name;
+        $hospital->email = $req->email;
+        $hospital->password = $req->password;
+        $hospital->phone = $req->phone;
+        $hospital->address = $req->address;
+        $hospital->role = $req->role;
+        $image = $req->file('image');
+        $ext = rand().".".$image->getClientOriginalName();
+        $myfile = $image->move('images1',$ext);
+        $hospital->image = $myfile;
+        $hospital->save();
+        return redirect()->back();
+    }
+
+    public function registerhospital(){
+        return view('main-website.components.add-hospital');
+    }
+
 
 
 

@@ -2,7 +2,7 @@
 
 @section('content')
 
-   @include('main-website.components.navbar')
+   @include('main-website.components.hospitalnavbar')
    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
@@ -14,7 +14,6 @@
         </div>
       </div>
     </section>
-   @include('main-website.components.about-dr')
    @include('main-website.components.hospitals')
    @include('main-website.components.footer')
 

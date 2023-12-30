@@ -13,7 +13,7 @@
 					<div class="col-md-6 col-lg-3 ftco-animate">
 						<div class="staff">
 							<div class="img-wrap d-flex align-items-stretch">
-								<div class="img align-self-stretch" style="background-image: url(images/doc-1.jpg);"></div>
+								<div class="img align-self-stretch" style="background-image: url(images1/{{$h->image}});"><img src="{{$h->image}}" alt="" width="100%" height="100%"></div>
 							</div>
 							<div class="text pt-3 text-center">
 								<h3>{{$h->name}}</h3>
