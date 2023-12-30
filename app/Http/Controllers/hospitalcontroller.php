@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\appointment;
 use App\Models\reports;
 use Illuminate\Support\Facades\DB;
-
+use App\Models\User;
 
 class hospitalcontroller extends Controller
 {
@@ -62,14 +62,19 @@ public function addreports(Request $req){
   $reports->Cholestrol = $req->cholestrol;
   $reports->BP = $req->bp;
   $reports->status = $req->status;
+  $reports->patient_name = $req->username;
   $reports->save();
   return redirect()->back();
 }
 
 public function reports(){
-  return view('hospital.addreports');
+  $users = DB::table('users')->where('role','patient')->get();
+  return view('hospital.addreports',compact('users'));
 }
 
-
+// public function allUserids(){
+//   $users = User::all();
+//   return view('hospital.addreports',compact('users'));
+// }
       
 }
