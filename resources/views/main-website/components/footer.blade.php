@@ -7,7 +7,7 @@
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-5">
-              <h2 class="ftco-heading-2 logo">Covid.<span>care</span></h2>
+              <h2 class="ftco-heading-2 logo"><img src="{{ asset('Assets/Img/anti-covid_logo.png') }}" alt="" style="width: 150px;"></h2>
               <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
             </div>
             <div class="ftco-footer-widget mb-5">
@@ -27,17 +27,35 @@
               </ul>
             </div>
           </div>
+          @if(Route::has('login'))
+          @auth
           <div class="col-md">
             <div class="ftco-footer-widget mb-5 ml-md-4">
               <h2 class="ftco-heading-2">Links</h2>
               <ul class="list-unstyled">
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Home</a></li>
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>About </a></li>
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Doctors</a></li>
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Deparments</a></li>
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Contact</a></li>
+                <li><a href="{{route('home')}}"><span class="ion-ios-arrow-round-forward mr-2"></span>Home</a></li>
+                <li><a href="{{route('about')}}"><span class="ion-ios-arrow-round-forward mr-2"></span>About </a></li>
+                <li><a href="{{route('hospital')}}"><span class="ion-ios-arrow-round-forward mr-2"></span>Hospitals</a></li>
+                <li><a href="{{route('depart')}}"><span class="ion-ios-arrow-round-forward mr-2"></span>Deparments</a></li>
+                <li><a href="{{route('appoint')}}"><span class="ion-ios-arrow-round-forward mr-2"></span>Appointments</a></li>
+                <li><a href="{{route('appoint')}}"><span class="ion-ios-arrow-round-forward mr-2"></span>Reports</a></li>
+                <li><a href="{{route('appoint')}}"><span class="ion-ios-arrow-round-forward mr-2"></span>My Appointments</a></li>
               </ul>
             </div>
+            @else
+            <div class="col-md">
+            <div class="ftco-footer-widget mb-5 ml-md-4">
+              <h2 class="ftco-heading-2">Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="{{route('home')}}"><span class="ion-ios-arrow-round-forward mr-2"></span>Home</a></li>
+                <li><a href="{{route('about')}}"><span class="ion-ios-arrow-round-forward mr-2"></span>About </a></li>
+                <li><a href="{{route('hospital')}}"><span class="ion-ios-arrow-round-forward mr-2"></span>Hospitals</a></li>
+                <li><a href="{{route('depart')}}"><span class="ion-ios-arrow-round-forward mr-2"></span>Deparments</a></li>
+                <li><a href="{{route('appoint')}}"><span class="ion-ios-arrow-round-forward mr-2"></span>Appointments</a></li>
+              </ul>
+            </div>
+            @endauth
+            @endif
             <!-- <div class="ftco-footer-widget mb-5 ml-md-4">
               <h2 class="ftco-heading-2">Services</h2>
               <ul class="list-unstyled">

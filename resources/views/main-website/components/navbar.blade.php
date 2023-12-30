@@ -8,23 +8,43 @@
 					</a>
 				</div>
 			</div>
-
+@if(Route::has('login'))
+@auth
 			<div class="col-lg-10 d-none d-md-block">
 				<div class="row d-flex">
 					<div class="col-md-4 pr-4 d-flex topper align-items-center">
 						<div class="icon bg-white mr-2 d-flex justify-content-center align-items-center"><span class="icon-map"></span></div>
-						<span class="text">Address: West 21th Street</span>
+						<span class="text">Address: {{ Auth::user()->address }}</span>
 					</div>
 					<div class="col-md pr-4 d-flex topper align-items-center">
 						<div class="icon bg-white mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-						<span class="text">Email: email@email.com</span>
+						<span class="text">Email: {{ Auth::user()->email }}</span>
 					</div>
 					<div class="col-md pr-4 d-flex topper align-items-center">
 						<div class="icon bg-white mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-						<span class="text">Phone: + 1235 2355 98</span>
+						<span class="text">Phone: {{ Auth::user()->phone }}</span>
 					</div>
 				</div>
 			</div>
+			@else
+			<div class="col-lg-10 d-none d-md-block">
+				<div class="row d-flex">
+					<div class="col-md-4 pr-4 d-flex topper align-items-center">
+						<div class="icon bg-white mr-2 d-flex justify-content-center align-items-center"><span class="icon-map"></span></div>
+						<span class="text">Address:Abc street</span>
+					</div>
+					<div class="col-md pr-4 d-flex topper align-items-center">
+						<div class="icon bg-white mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+						<span class="text">Email:Abc@gmail.com</span>
+					</div>
+					<div class="col-md pr-4 d-flex topper align-items-center">
+						<div class="icon bg-white mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
+						<span class="text">Phone:00992233888</span>
+					</div>
+				</div>
+			</div>
+			@endauth
+			@endif
 		</div>
 		</div>
 	</nav>
@@ -48,7 +68,7 @@
 
 			<form action="{{ route('logout') }}" method="post">
 				@csrf
-				<li class="nav-item"><a href="{{route('logout')}}" class="nav-link"><button type="submit" class="btn btn-secondary">LOGOUT</button></a></li>
+				<li class="nav-item"><a href="{{route('logout')}}" class="nav-link"><button type="submit" class="btn btn-secondary">{{ Auth::user()->name }} Logout</button></a></li>
 			</form>
 			@else
 			
