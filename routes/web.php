@@ -110,7 +110,7 @@ Route::middleware('auth', 'role:hospital')->group(function () {
 });
 Route::middleware('auth','role:patient')->group(function () {
     Route::get('/home',[patientcontroller::class,'showhospitaldata'])->name('patient');
-    Route::get('/home',[patientcontroller::class,'showhospitalvaccinedata'])->name('patient');
+    // Route::get('/home',[patientcontroller::class,'showhospitalvaccinedata'])->name('patient');
     // route::get('/about',[patientcontroller::class,'showhospitalvaccine'])->name('about');
     // route::get('/hospital',[patientcontroller::class,'showhospital'])->name('hospital');
     // route::get('/departments',[patientcontroller::class,'departpage'])->name('depart');
