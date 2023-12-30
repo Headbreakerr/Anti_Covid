@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('Appetite');
             $table->string('Cholestrol');
             $table->string('BP');
+            $table->string('status');
             $table->string('user_id')->nullable();
             $table->timestamps();
         });

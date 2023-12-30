@@ -31,7 +31,7 @@
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail3">Fever</label>
-                        <input type="text" style="color: black;" class="form-control" id="exampleInputEmail3" placeholder="Fever" name="fever">
+                        <input type="text" style="color: black;" class="form-control" id="exampleInputEmail2" placeholder="Fever" name="fever">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail3">Flu </label>
@@ -39,19 +39,27 @@
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail3">Cough</label>
-                        <input type="text" style="color: black;" class="form-control" id="exampleInputEmail3" placeholder="Cough" name="cough">
+                        <input type="text" style="color: black;" class="form-control" id="exampleInputEmail4" placeholder="Cough" name="cough">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail3">Appetite</label>
-                        <input type="text" style="color: black;" class="form-control" id="exampleInputEmail3" placeholder="Appetite" name="appetite">
+                        <input type="text" style="color: black;" class="form-control" id="exampleInputEmail5" placeholder="Appetite" name="appetite">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail3">Cholestrol</label>
-                        <input type="text" style="color: black;" class="form-control" id="exampleInputEmail3" placeholder="Cholestrol" name="cholestrol">
+                        <input type="text" style="color: black;" class="form-control" id="exampleInputEmail6" placeholder="Cholestrol" name="cholestrol">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail3">BP</label>
-                        <input type="text" style="color: black;" class="form-control" id="exampleInputEmail3" placeholder="BP" name="bp">
+                        <input type="text" style="color: black;" class="form-control" id="exampleInputEmail7" placeholder="BP" name="bp">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail3">Status</label>
+                        <!-- <input type="text" style="color: black;" class="form-control" id="exampleInputEmail8" placeholder="Status" name="status"> -->
+                        <select name="status" id="status" class="text-dark form-control bg-white" >
+                          <option value="positive">Positive</option>
+                          <option value="negative">Negative</option>
+                        </select>
                       </div>
 
                     <button type="submit" class="btn btn-primary mr-2">Submit</button>

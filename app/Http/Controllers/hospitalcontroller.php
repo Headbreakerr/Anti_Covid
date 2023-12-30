@@ -64,6 +64,7 @@ public function addreports(Request $req){
   $reports->Appetite = $req->appetite;
   $reports->Cholestrol = $req->cholestrol;
   $reports->BP = $req->bp;
+  $reports->status = $req->status;
   $reports->save();
   return redirect()->back();
 }
