@@ -21,7 +21,8 @@ return new class extends Migration
             $table->string('Cholestrol');
             $table->string('BP');
             $table->string('status');
-            $table->string('user_id')->nullable();
+            $table->integer('user_id')->default(1);
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

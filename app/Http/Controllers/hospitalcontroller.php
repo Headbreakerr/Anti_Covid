@@ -54,9 +54,6 @@ public function vaccine(Request $req){
 
 public function addreports(Request $req){
   $reports = new reports();
-  if(Auth::id()){
-    
-  }
   $reports->Blood_Group = $req->bloodgroup;
   $reports->Fever = $req->fever;
   $reports->Flu = $req->flu;
