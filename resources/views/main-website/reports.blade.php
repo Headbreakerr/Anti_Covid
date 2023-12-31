@@ -125,9 +125,9 @@ Patient Details
     </div>
     <div class="col-md-6 mb-3">
       @if($r->status == 'positive')
-        <p class='text-danger'>{{$r->status}}</p>
+        <p class='text-danger text-uppercase'>{{$r->status}}</p>
       @elseif($r->status == 'negative')
-        <p class='text-success'>{{$r->status}}</p>
+        <p class='text-success text-uppercase'>{{$r->status}}</p>
       @else
         <!-- Handle other cases if needed -->
         <p>{{$r->status}}</p>
