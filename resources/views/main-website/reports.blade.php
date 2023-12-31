@@ -5,14 +5,14 @@
    @include('main-website.components.navbar')
 
 
-   <div class="container">
+   <div class="container mt-5 w-75">
        <!-- Table Header -->
-<div class="bg-primary text-white text-center p-2">
+<div class="bg-primary text-white text-center p-2 ">
 Patient Details
 </div>
 
 @foreach($reports as $r)
-        <div class="container">
+        <div class="container ">
             <!-- Main Table -->
             <div class="row mt-4">
               <!-- First Column -->
@@ -50,10 +50,10 @@ Patient Details
         </div>
        
    </div>
-   <div class="container">
+   <div class="container w-75">
        <!-- Table Header -->
 <div class="bg-primary text-white text-center p-2">
-  Sample Report
+  Patient Report
 </div>
         <div class="container">
             <!-- Main Table -->
@@ -113,7 +113,7 @@ Patient Details
               </div>
         </div>
         </div>
-        <div class="container">
+        <div class="container w-75">
        <!-- Table Header -->
 <div class="bg-primary text-white text-center p-2">
   Result
@@ -124,18 +124,25 @@ Patient Details
       <p class="font-weight-bold">Covid Result</p>
     </div>
     <div class="col-md-6 mb-3">
+      @if($r->status == 'positive')
+        <p class='text-danger'>{{$r->status}}</p>
+      @elseif($r->status == 'negative')
         <p class='text-success'>{{$r->status}}</p>
+      @else
+        <!-- Handle other cases if needed -->
+        <p>{{$r->status}}</p>
+      @endif
     </div>
-    
 </div>
 @endforeach
 
-  
 </div>
 <div class="bg-primary text-white text-center p-3">
   
+  </div>
 </div>
-   </div>
+<br>
+<br>
    @include('main-website.components.footer')
 
    @endsection

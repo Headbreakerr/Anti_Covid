@@ -67,7 +67,7 @@
 
 					<form action="{{ route('logout') }}" method="post">
 						@csrf
-						<li class="nav-item"><a href="{{route('logout')}}" class="nav-link"><button type="submit" class="btn btn-secondary">{{ Auth::user()->name }} Logout</button></a></li>
+						<li class="nav-item"><a href="{{route('logout')}}" class="nav-link"><button type="submit" class="btn btn-secondary"> Logout</button></a></li>
 					</form>
 					@else
 
