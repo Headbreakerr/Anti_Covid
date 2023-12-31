@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\appointment;
-
-
+use App\Models\reports;
+use App\Models\vaccine;
 
 class homecontroller extends Controller
 {
@@ -50,6 +50,8 @@ class homecontroller extends Controller
 
     function delete($id){
         $userid = appointment::find($id);
+        $userid = reports::find($id);
+        $userid = vaccine::find($id);
         $userid->delete();
 
         return redirect()->back();

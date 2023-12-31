@@ -92,7 +92,7 @@ Route::middleware('auth' , 'role:admin')->group(function () {
     Route::get('/all-reports', [admincontroller::class,'allreports'])->name('allreports');
     Route::get('/booking-details', [admincontroller::class,'bookdetails'])->name('bookdetails');
     Route::get('/exceladmin',[admincontroller::class,'exporttoexcel']);
-    
+    Route::get('/delete/{id}', [admincontroller::class,'delete']); 
 });
 Route::middleware('auth', 'role:hospital')->group(function () {
     Route::get('/hospitaldashboard', [hospitalcontroller::class,'hospitaldashboard'])->name('hospital-dashboard');
@@ -107,8 +107,7 @@ Route::middleware('auth', 'role:hospital')->group(function () {
     Route::post('/add-reports', [hospitalcontroller::class,'addreports'])->name('addreports');
     Route::get('/add-reports-details', [hospitalcontroller::class,'allreports'])->name('Allreports');
     Route::get('/excelhos',[hospitalcontroller::class,'exporttoexcel']);
-    
-
+    Route::get('/delete/{id}', [homecontroller::class,'delete']); 
 });
 Route::middleware('auth','role:patient')->group(function () {
     Route::get('/home',[patientcontroller::class,'showhospitaldata'])->name('patient');
