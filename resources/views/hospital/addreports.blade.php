@@ -36,32 +36,65 @@
                       </div>
                       <div class="form-group">
                         <label for="exampleInputName1">Blood_Group</label>
-                        <input type="text"  class="form-control bg-white" id="exampleInputName1" placeholder="Blood_Group" name="bloodgroup">
-                        
+                        <!-- <input type="text"  class="form-control bg-white" id="exampleInputName1" placeholder="Blood_Group" name="bloodgroup"> -->
+                        <select type="text"  class="form-control bg-white" id="exampleInputName1" placeholder="Blood_Group" name="bloodgroup">
+                          <option value="O+">O+</option>
+                          <option value="O-">O-</option>
+                          <option value="A+">A+</option>
+                          <option value="A-">A-</option>
+                          <option value="B+">B+</option>
+                          <option value="B-">B-</option>
+                          <option value="AB+">AB+</option>
+                          <option value="AB-">AB-</option>
+                        </select>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail3">Fever</label>
-                        <input type="text" style="color: black;" class="bg-white form-control" id="exampleInputEmail2" placeholder="Fever" name="fever">
+                        <!-- <input type="text" style="color: black;" class="bg-white form-control" id="exampleInputEmail2" placeholder="Fever" name="fever"> -->
+                        <select class="bg-white form-control" id="exampleInputEmail2" placeholder="Fever" name="fever">
+                          <option value="Yes">Yes</option>
+                          <option value="No">No</option>
+                        </select>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail3">Flu </label>
-                        <input type="text" style="color: black;" class="bg-white form-control" id="exampleInputEmail3" placeholder="Flu" name="flu">
+                        <!-- <input type="text" style="color: black;" class="bg-white form-control" id="exampleInputEmail3" placeholder="Flu" name="flu"> -->
+                        <select class="bg-white form-control" id="exampleInputEmail3" placeholder="Flu" name="flu">
+                          <option value="Yes">Yes</option>
+                          <option value="No">No</option>
+                        </select>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail3">Cough</label>
-                        <input type="text" style="color: black;" class="form-control bg-white" id="exampleInputEmail4" placeholder="Cough" name="cough">
+                        <!-- <input type="text" style="color: black;" class="form-control bg-white" id="exampleInputEmail4" placeholder="Cough" name="cough"> -->
+                        <select class="form-control bg-white" id="exampleInputEmail4" placeholder="Cough" name="cough">
+                          <option value="Yes">Yes</option>
+                          <option value="No">No</option>
+                          </select>
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputEmail3">Appetite</label>
-                        <input type="text" style="color: black;" class="form-control bg-white" id="exampleInputEmail5" placeholder="Appetite" name="appetite">
+                        <label for="exampleInputEmail3">Loss in Appetite</label>
+                        <!-- <input type="text" style="color: black;" class="form-control bg-white" id="exampleInputEmail5" placeholder="Appetite" name="appetite"> -->
+                        <select  class="form-control bg-white" id="exampleInputEmail5" placeholder="Appetite" name="appetite">
+                          <option value="Yes">Yes</option>
+                          <option value="No">No</option>
+                        </select>
+                        
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputEmail3">Cholestrol</label>
-                        <input type="text" style="color: black;" class="form-control bg-white" id="exampleInputEmail6" placeholder="Cholestrol" name="cholestrol">
+                        <label for="exampleInputEmail3">Cholestrol Level</label>
+                        <!-- <input type="text" style="color: black;" class="form-control bg-white" id="exampleInputEmail6" placeholder="Cholestrol" name="cholestrol"> -->
+                        <select  class="form-control bg-white" id="exampleInputEmail6" placeholder="Cholestrol" name="cholestrol">
+                          <option value="High">High</option>
+                          <option value="Severe">Severe</option>
+                          <option value="Mild">Mild</option>
+                          <option value="Low">Low</option>
+                          <option value="High">High</option>
+                        </select>
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputEmail3">BP</label>
-                        <input type="text" style="color: black;" class="form-control bg-white" id="exampleInputEmail7" placeholder="BP" name="bp">
+                        <label for="exampleInputEmail3">Blood Pressure Level</label>
+                        <input type="number" style="color: black;" class="form-control bg-white" id="exampleInputEmail7" placeholder="BP" name="bp">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail3">Status</label>
