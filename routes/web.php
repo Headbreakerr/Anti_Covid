@@ -29,15 +29,13 @@ route::get('/about',[patientcontroller::class,'showhospitalvaccine'])->name('abo
 route::get('/hospital',[patientcontroller::class,'showhospital'])->name('hospital');
 route::get('/departments',[patientcontroller::class,'departpage'])->name('depart');
 route::get('/appointments',[patientcontroller::class,'showhospitalvaccineappo'])->name('appoint');
-route::get('/contact',[patientcontroller::class,'contactpage'])->name('contact');
-route::get('/reports',[patientcontroller::class,'yourreports'])->name('reports');
+route::get('/reports',[patientcontroller::class,'myreports'])->name('reports');
 
 Route::get('/home',[patientcontroller::class,'showhospitalvaccinedata'])->name('patient');
 route::get('/about',[patientcontroller::class,'showhospitalvaccine'])->name('about');
 route::get('/hospital',[patientcontroller::class,'showhospital'])->name('hospital');
 route::get('/departments',[patientcontroller::class,'departpage'])->name('depart');
 route::get('/appointments',[patientcontroller::class,'showhospitalvaccineappo'])->name('appoint');
-route::get('/contact',[patientcontroller::class,'contactpage'])->name('contact');
 route::post('/home',[patientcontroller::class,'appoint'])->name('appointment');
 route::post('/appointments',[patientcontroller::class,'appoint'])->name('appointment');
 route::get('/myappointments',[patientcontroller::class,'myappoint'])->name('myappoint');
@@ -65,9 +63,9 @@ route::get('/myappointments',[patientcontroller::class,'myappoint'])->name('myap
 // Route::get('/home', [homecontroller::class,'showhospitala']);
 // Route::post('/appoint', [homecontroller::class,'appoint'])->name('appoint');
 // Route::get('/myappoint', [homecontroller::class,'myappoint'])->name('myappoint');
-// Route::get('/delete/{id}', [homecontroller::class,'delete'])->name('delete');
-// Route::get('/reject/{id}', [homecontroller::class,'reject'])->name('reject');
-// Route::get('/approved/{id}', [homecontroller::class,'approved'])->name('approved');
+Route::get('/delete/{id}', [homecontroller::class,'delete'])->name('delete');
+Route::get('/reject/{id}', [homecontroller::class,'reject'])->name('reject');
+Route::get('/approved/{id}', [homecontroller::class,'approved'])->name('approved');
 
 
 // Route::get('/list-of-patient-details', [homecontroller::class,'myappointa'])->name('list-op-patient');
@@ -92,6 +90,7 @@ Route::middleware('auth' , 'role:admin')->group(function () {
     Route::get('/list-of-hospital-detail', [admincontroller::class,'listofhospital'])->name('list-of-hospital');
     Route::get('/all-vaccine', [admincontroller::class,'allvaccine'])->name('allvaccine');
     Route::get('/all-reports', [admincontroller::class,'allreports'])->name('allreports');
+    Route::get('/Book-Appointments-detals', [admincontroller::class,'bookdetails'])->name('bookdetails');
     
 });
 Route::middleware('auth', 'role:hospital')->group(function () {
@@ -105,7 +104,9 @@ Route::middleware('auth', 'role:hospital')->group(function () {
     Route::post('/add-vaccine', [hospitalcontroller::class,'vaccine'])->name('vaccine');
     Route::get('/add-reports', [hospitalcontroller::class,'reports'])->name('addreports');
     Route::post('/add-reports', [hospitalcontroller::class,'addreports'])->name('addreports');
-
+    Route::get('/add-reports-details', [hospitalcontroller::class,'allreports'])->name('Allreports');
+    Route::get('/excel',[admincontroller::class,'exporttoexcel'])->name('excel');
+    
 
 });
 Route::middleware('auth','role:patient')->group(function () {

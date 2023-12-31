@@ -8,8 +8,8 @@
 					</a>
 				</div>
 			</div>
-@if(Route::has('login'))
-@auth
+			@if(Route::has('login'))
+			@auth
 			<div class="col-lg-10 d-none d-md-block">
 				<div class="row d-flex">
 					<div class="col-md-4 pr-4 d-flex topper align-items-center">
@@ -60,27 +60,26 @@
 					<li class="nav-item"><a href="{{route('hospital')}}" class="nav-link">Hospital</a></li>
 					<li class="nav-item"><a href="{{route('depart')}}" class="nav-link">Departments</a></li>
 					<li class="nav-item"><a href="{{route('appoint')}}" class="nav-link">Appointment</a></li>
-					<li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>
 					@if(Route::has('login'))
 					@auth
 					<li class="nav-item"><a href="{{route('reports')}}" class="nav-link">reports</a></li>
-			<li class="nav-item"><a href="{{route('myappoint')}}" class="nav-link">My Appointments</a></li>
+					<li class="nav-item"><a href="{{route('myappoint')}}" class="nav-link">My Appointments</a></li>
 
-			<form action="{{ route('logout') }}" method="post">
-				@csrf
-				<li class="nav-item"><a href="{{route('logout')}}" class="nav-link"><button type="submit" class="btn btn-secondary">{{ Auth::user()->name }} Logout</button></a></li>
-			</form>
-			@else
-			
-			<li class="nav-item mx-5">
-				<li class="nav-item mt-1 mx-1"><a href="{{route('login')}}" class="btn btn-secondary py-2 px-3">Login</a></li>
-				<li class="nav-item mt-1"><a href="{{ route('register')}}" class="btn btn-secondary py-2 px-3">Register</a></li>
-			</li>
-			
-	
-			
-			@endauth
-			@endif
+					<form action="{{ route('logout') }}" method="post">
+						@csrf
+						<li class="nav-item"><a href="{{route('logout')}}" class="nav-link"><button type="submit" class="btn btn-secondary">{{ Auth::user()->name }} Logout</button></a></li>
+					</form>
+					@else
+
+					<li class="nav-item mx-5">
+					<li class="nav-item mt-1 mx-1"><a href="{{route('login')}}" class="btn btn-secondary py-2 px-3">Login</a></li>
+					<li class="nav-item mt-1"><a href="{{ route('register')}}" class="btn btn-secondary py-2 px-3">Register</a></li>
+					</li>
+
+
+
+					@endauth
+					@endif
 				</ul>
 			</div>
 		</div>

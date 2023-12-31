@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\appointment;
 use App\Models\vaccine;
+use App\Models\reports;
+use App\Exports\reportsexports;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -10,7 +14,12 @@ use Illuminate\Support\Facades\DB;
 class admincontroller extends Controller
 {
     function admindashboard(){
-        return view('admin.index');
+      $patientreports = reports::all();
+      $patientdata = DB::table('users')->where('role','patient')->get();
+      $hospitaldata = DB::table('users')->where('role','hospital')->get();
+      $vaccine = vaccine::all();
+      $bookdetails = appointment::all();
+        return view('admin.index',compact('patientreports','patientdata','hospitaldata','vaccine','bookdetails'));
     }
 
     public function listofpatient(){
@@ -29,6 +38,18 @@ class admincontroller extends Controller
       }
 
       public function allreports(){
-        return view ('admin.all-reports');
+        $patientreports = reports::all();
+        return view ('admin.all-reports',compact('patientreports'));
       }
+      
+      public function bookdetails(){
+        $bookdetails = appointment::all();
+        return view ('admin.book-appoint-details',compact('bookdetails'));
+      }
+      
+      public function exporttoexcel(){
+        return Excel::download(new reportsexports,'reportsexcel.xlsx');
+      }
+
+
 }

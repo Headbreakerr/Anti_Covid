@@ -22,19 +22,17 @@
     <table class="table">
         <tr>
             <th>name</th>
+            <th>email</th>
             <th>phone</th>
-            <th>date</th>
-            <th>time</th>
-            <th>vaccine name</th>
+            <th>address</th>
             <th>action</th>
         </tr>
        @foreach($patientdata as $p)
        <tr>
-        <td>{{$p->first_name}}</td>
+        <td>{{$p->name}}</td>
+        <td>{{$p->email}}</td>
         <td>{{$p->phone}}</td>
-        <td>{{$p->date}}</td>
-        <td>{{$p->time}}</td>
-        <td>{{$p->vaccinename}}</td>
+        <td>{{$p->address}}</td>
         <td>
         <a href="{{ URL::to('/delete/'. $p->id) }}" onclick="return confirm('are you sure to CANCEL this')" class="btn btn-danger" >CANCEL</a>
 

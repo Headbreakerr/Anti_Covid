@@ -4,6 +4,7 @@
 
 @include('main-website.components.hospitalnavbar')
 <section class="ftco-section ftco-no-pt ftc-no-pb">
+    <h1 style="text-align: center;">Add Hospital</h1>
 <form action="{{route('register')}}" method="post" enctype="multipart/form-data">
     @csrf
     <table class="table">
@@ -35,7 +36,7 @@
             <td><input type="file" name="image" id=""></td>
         </tr>
         <tr>
-            <td><input type="submit"  class="btn btn-secondary" id=""></td>
+            <td><input type="submit" value="Add Hospital" class="btn btn-secondary" id=""></td>
         </tr>
         
     </table>

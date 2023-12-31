@@ -6,7 +6,9 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\vaccine;
 use App\Models\appointment;
+use App\Models\reports;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 
 class patientcontroller extends Controller
@@ -91,6 +93,20 @@ class patientcontroller extends Controller
         }
       }
 
+      public function myreports(){
+        if(Auth::id()){
+          $userid=Auth::user()->id;
+          $reports=reports::where('patient_name',$userid)->get();
+          return view('main-website.reports',compact('reports'));
+        }else{
+          return redirect()->back();
+        }
+      }
+
+     
+
+
+
 
     
 
@@ -106,10 +122,6 @@ class patientcontroller extends Controller
         return view('main-website.department');
     }
 
-    public function contactpage(){
-        return view('main-website.contact');
-    }
-
     public function yourreports(){
         return view('main-website.reports');
     }
@@ -118,7 +130,7 @@ class patientcontroller extends Controller
         $hospital = new User();
         $hospital->name = $req->name;
         $hospital->email = $req->email;
-        $hospital->password = $req->password;
+        $hospital->password = hash::make($req->password);
         $hospital->phone = $req->phone;
         $hospital->address = $req->address;
         $hospital->role = $req->role;

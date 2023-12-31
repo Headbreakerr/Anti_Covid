@@ -14,7 +14,10 @@ class hospitalcontroller extends Controller
 {
 
   public function hospitaldashboard(){
-    return view('hospital.index');
+  $patient = appointment::all();
+  $patientreports = reports::all();
+  $patientdata = DB::table('users')->where('role','patient')->get();
+    return view('hospital.index',compact('patientdata','patient','patientreports'));
 }
 
 public function showhospital(){
@@ -23,7 +26,7 @@ public function showhospital(){
 }
 
 public function showappoint(){
-  $patientdata = appointment::all();
+      $patientdata = DB::table('users')->where('role','patient')->get();
      return view('hospital.list-of-patient',compact('patientdata'));    
 }
 
@@ -72,9 +75,9 @@ public function reports(){
   return view('hospital.addreports',compact('users'));
 }
 
-// public function allUserids(){
-//   $users = User::all();
-//   return view('hospital.addreports',compact('users'));
-// }
+public function allreports(){
+  $patientreports = reports::all();
+  return view ('hospital.all-reports',compact('patientreports'));
+}
       
 }
