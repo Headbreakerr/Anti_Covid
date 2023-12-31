@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\vaccine;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use App\Exports\vaccineExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class admincontroller extends Controller
 {
@@ -31,4 +32,8 @@ class admincontroller extends Controller
       public function allreports(){
         return view ('admin.all-reports');
       }
+      public function vaccineData(){
+        return Excel::download(new vaccineExport, 'vaccineData.xlsx');
+      }
+    
 }

@@ -4,7 +4,7 @@
     <title>Covid-19 Vaccine Booking System</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="website icon" href="{{ asset('Assets/Img/anti-covid_logo.png') }}">
+    <link rel="website icon" href="{{ asset('Assets/Img/website_icon.png') }}">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
