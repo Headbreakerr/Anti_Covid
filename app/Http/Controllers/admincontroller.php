@@ -10,7 +10,6 @@ use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Exports\vaccineExport;
-use Maatwebsite\Excel\Facades\Excel;
 
 class admincontroller extends Controller
 {
