@@ -7,21 +7,20 @@
    <div class="container">
     <table class="table">
         <tr>
-            <th>first name</th>
-            <th>last name</th>
-            <th>hospital name</th>
-            <th>vaccine name</th>
-            <th>time</th>
-            <th>date</th>
-            <th>massage</th>
-            <th>phone</th>
-            <th>status</th>
-            <th>action</th>
+            <th>Name</th>
+            <th>Hospital</th>
+            <th>Vaccine </th>
+            <th>Time</th>
+            <th>Date</th>
+            <th>Message</th>
+            <th>Phone</th>
+            <th>Status</th>
+            <th>Action</th>
         </tr>
         @foreach($appoint as $f)
         <tr>
-            <td>{{$f->first_name}}</td>
-            <td>{{$f->last_name}}</td>
+            <td>{{$f->first_name}} {{$f->last_name}}</td>
+            
             <td>{{$f->hospitalname}}</td>
             <td>{{$f->vaccinename}}</td>
             <td>{{$f->time}}</td>

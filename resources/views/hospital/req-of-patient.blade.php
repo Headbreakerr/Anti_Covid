@@ -36,9 +36,9 @@
             <td>{{$f->phone}}</td>
             <td>{{$f->status}}</td>
             <td>
-              <a href="{{ URL::to('/reject/'. $f->id) }}" onclick="return confirm('are you sure to reject this')" class="btn btn-danger" >reject</a>
-              <a href="{{ URL::to('/approved/'. $f->id) }}" onclick="return confirm('are you sure to approved this')" class="btn btn-danger" >approved</a>
-              <a href="{{route('addreports')}}" class="btn btn-danger">Add Reports</a>
+              <a href="{{ URL::to('/reject/'. $f->id) }}" onclick="return confirm('are you sure to reject this')" class="btn btn-danger" >Reject</a>
+              <a href="{{ URL::to('/approved/'. $f->id) }}" onclick="return confirm('are you sure to approved this')" class="btn btn-success" >Approve</a>
+              <a href="{{route('addreports')}}" class="btn border-white">Add Reports</a>
             </td>
         </tr>
         @endforeach

@@ -37,6 +37,7 @@
                       <div class="form-group">
                         <label for="exampleInputName1">Blood_Group</label>
                         <input type="text"  class="form-control bg-white" id="exampleInputName1" placeholder="Blood_Group" name="bloodgroup">
+                        
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail3">Fever</label>
