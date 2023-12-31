@@ -101,8 +101,8 @@
                         <label for="exampleInputEmail3">Status</label>
                         <!-- <input type="text" style="color: black;" class="form-control" id="exampleInputEmail8" placeholder="Status" name="status"> -->
                         <select name="status" id="status" class="text-dark form-control bg-white" >
-                          <option value="positive">Positive</option>
-                          <option value="negative">Negative</option>
+                          <option value="Positive">Positive</option>
+                          <option value="Negative">Negative</option>
                         </select>
                       </div>
                       
