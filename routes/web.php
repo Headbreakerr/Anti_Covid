@@ -29,7 +29,6 @@ route::get('/about',[patientcontroller::class,'showhospitalvaccine'])->name('abo
 route::get('/hospital',[patientcontroller::class,'showhospital'])->name('hospital');
 route::get('/departments',[patientcontroller::class,'departpage'])->name('depart');
 route::get('/appointments',[patientcontroller::class,'showhospitalvaccineappo'])->name('appoint');
-route::get('/contact',[patientcontroller::class,'contactpage'])->name('contact');
 route::get('/reports',[patientcontroller::class,'yourreports'])->name('reports');
 
 Route::get('/home',[patientcontroller::class,'showhospitalvaccinedata'])->name('patient');
@@ -37,7 +36,6 @@ route::get('/about',[patientcontroller::class,'showhospitalvaccine'])->name('abo
 route::get('/hospital',[patientcontroller::class,'showhospital'])->name('hospital');
 route::get('/departments',[patientcontroller::class,'departpage'])->name('depart');
 route::get('/appointments',[patientcontroller::class,'showhospitalvaccineappo'])->name('appoint');
-route::get('/contact',[patientcontroller::class,'contactpage'])->name('contact');
 route::post('/home',[patientcontroller::class,'appoint'])->name('appointment');
 route::post('/appointments',[patientcontroller::class,'appoint'])->name('appointment');
 route::get('/myappointments',[patientcontroller::class,'myappoint'])->name('myappoint');
