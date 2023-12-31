@@ -91,7 +91,7 @@ Route::middleware('auth' , 'role:admin')->group(function () {
     Route::get('/all-vaccine', [admincontroller::class,'allvaccine'])->name('allvaccine');
     Route::get('/all-reports', [admincontroller::class,'allreports'])->name('allreports');
     Route::get('/booking-details', [admincontroller::class,'bookdetails'])->name('bookdetails');
-    Route::get('/excel',[admincontroller::class,'exporttoexcel'])->name('excel');
+    Route::get('/exceladmin',[admincontroller::class,'exporttoexcel']);
     
 });
 Route::middleware('auth', 'role:hospital')->group(function () {
@@ -106,7 +106,7 @@ Route::middleware('auth', 'role:hospital')->group(function () {
     Route::get('/add-reports', [hospitalcontroller::class,'reports'])->name('addreports');
     Route::post('/add-reports', [hospitalcontroller::class,'addreports'])->name('addreports');
     Route::get('/add-reports-details', [hospitalcontroller::class,'allreports'])->name('Allreports');
-    Route::get('/excel',[admincontroller::class,'exporttoexcel'])->name('excel');
+    Route::get('/excelhos',[hospitalcontroller::class,'exporttoexcel']);
     
 
 });

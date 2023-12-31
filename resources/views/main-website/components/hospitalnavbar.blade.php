@@ -40,7 +40,6 @@
 					<li class="nav-item"><a href="{{route('hospital')}}" class="nav-link">Hospital</a></li>
 					<li class="nav-item"><a href="{{route('depart')}}" class="nav-link">Departments</a></li>
 					<li class="nav-item"><a href="{{route('appoint')}}" class="nav-link">Appointment</a></li>
-					<li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>
 					@if(Route::has('login'))
 					@auth
 					<li class="nav-item"><a href="{{route('reports')}}" class="nav-link">reports</a></li>

@@ -6,6 +6,8 @@ use App\Models\vaccine;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\appointment;
+use App\Exports\reportsexports;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Models\reports;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
@@ -78,6 +80,10 @@ public function reports(){
 public function allreports(){
   $patientreports = reports::all();
   return view ('hospital.all-reports',compact('patientreports'));
+}
+
+public function exporttoexcel(){
+  return Excel::download(new reportsexports,'reportsexcel.xlsx');
 }
       
 }

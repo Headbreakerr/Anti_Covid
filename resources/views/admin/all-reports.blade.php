@@ -32,7 +32,7 @@
               <th>BP</th>
               <th>Status</th>
               <th>Action</th>
-             <th><a href="{{route('excel')}}" class="btn btn-warning">Download Excel</a></th>
+             <th><a href="{{URL::to('/exceladmin')}}" class="btn btn-warning">Download Excel</a></th>
             </tr>
             @foreach($patientreports as $p)
             <tr>
