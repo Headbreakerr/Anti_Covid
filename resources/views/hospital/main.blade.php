@@ -1,368 +1,528 @@
 <div class="content-wrapper">
-  <div class="row">
-    <div class="col-12 grid-margin stretch-card">
-      <div class="card corona-gradient-card">
-        <div class="card-body py-0 px-0 px-sm-3">
-          <div class="row align-items-center">
-            <div class="col-4 col-sm-3 col-xl-2">
-              <img src="assets/images/dashboard/Group126@2x.png" class="gradient-corona-img img-fluid" alt="">
-            </div>
-            <div class="col-5 col-sm-7 col-xl-8 p-0">
-              <h4 class="mb-1 mb-sm-0">Want even more features?</h4>
-              <p class="mb-0 font-weight-normal d-none d-sm-block">Check out our Pro version with 5 unique layouts!</p>
-            </div>
-            <div class="col-3 col-sm-2 col-xl-2 pl-0 text-center">
-              <span>
-                <a href="https://www.bootstrapdash.com/product/corona-admin-template/" target="_blank" class="btn btn-outline-light btn-rounded get-started-btn">Upgrade to PRO</a>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row ">
-    <div class="col-12 grid-margin">
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">list of patient details</h4>
-          <div class="table-responsive">
-            <div class="container">
-              <table class="table">
-                <tr>
-                  <th>name</th>
-                  <th>email</th>
-                  <th>phone</th>
-                  <th>address</th>
-                  <th>action</th>
-                </tr>
-                @foreach($patientdata as $p)
-                <tr>
-                  <td>{{$p->name}}</td>
-                  <td>{{$p->email}}</td>
-                  <td>{{$p->phone}}</td>
-                  <td>{{$p->address}}</td>
-                  <td>
-                    <a href="{{ URL::to('/delete/'. $p->id) }}" onclick="return confirm('are you sure to CANCEL this')" class="btn btn-danger">CANCEL</a>
-
-                  </td>
-                </tr>
-                @endforeach
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row ">
-    <div class="col-12 grid-margin">
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">request of patient appointments</h4>
-          <div class="table-responsive">
-            <div class="container">
-              <table class="table">
-                <tr>
-                  <th>name</th>
-                  <th>vaccine name</th>
-                  <th>massage</th>
-                  <th>phone</th>
-                  <th>status</th>
-                  <th>action</th>
-                </tr>
-                @foreach($patient as $f)
-                <tr>
-                  <td>{{$f->first_name}}</td>
-                  <td>{{$f->vaccinename}}</td>
-                  <td>{{$f->massage}}</td>
-                  <td>{{$f->phone}}</td>
-                  <td>{{$f->status}}</td>
-                  <td>
-                    <a href="{{ URL::to('/reject/'. $f->id) }}" onclick="return confirm('are you sure to reject this')" class="btn btn-danger">reject</a>
-                    <a href="{{ URL::to('/approved/'. $f->id) }}" onclick="return confirm('are you sure to approved this')" class="btn btn-danger">approved</a>
-                    <a href="{{route('addreports')}}" class="btn btn-danger">Add Reports</a>
-                  </td>
-                </tr>
-                @endforeach
-
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row ">
-    <div class="col-12 grid-margin">
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">All Patient Reports Details</h4>
-          <div class="table-responsive">
-            <div class="container">
-              <table class="table">
-                <tr>
-                  <th>patient id</th>
-                  <th>Blood_Group</th>
-                  <th>Fever</th>
-                  <th>Flu</th>
-                  <th>Appetite</th>
-                  <th>Cholestrol</th>
-                  <th>BP</th>
-                  <th>Status</th>
-                  <th>Action</th>
-                </tr>
-                @foreach($patientreports as $p)
-                <tr>
-                  <td>{{$p->patient_name}}</td>
-                  <td>{{$p->Blood_Group}}</td>
-                  <td>{{$p->Fever}}</td>
-                  <td>{{$p->Flu}}</td>
-                  <td>{{$p->Appetite}}</td>
-                  <td>{{$p->Cholestrol}}</td>
-                  <td>{{$p->BP}}</td>
-                  <td>{{$p->status}}</td>
-                  <td>
-                    <a href="{{ URL::to('/delete/'. $p->id) }}" onclick="return confirm('are you sure to CANCEL this')" class="btn btn-danger">CANCEL</a>
-
-                  </td>
-                </tr>
-                @endforeach
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 col-xl-4 grid-margin stretch-card">
-      <div class="card">
-        <div class="card-body">
-          <div class="d-flex flex-row justify-content-between">
-            <h4 class="card-title">Messages</h4>
-            <p class="text-muted mb-1 small">View all</p>
-          </div>
-          <div class="preview-list">
-            <div class="preview-item border-bottom">
-              <div class="preview-thumbnail">
-                <img src="assets/images/faces/face6.jpg" alt="image" class="rounded-circle" />
-              </div>
-              <div class="preview-item-content d-flex flex-grow">
-                <div class="flex-grow">
-                  <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                    <h6 class="preview-subject">Leonard</h6>
-                    <p class="text-muted text-small">5 minutes ago</p>
-                  </div>
-                  <p class="text-muted">Well, it seems to be working now.</p>
+    <div class="row">
+        <div class="col-12 grid-margin stretch-card">
+            <div class="card corona-gradient-card">
+                <div class="card-body py-0 px-0 px-sm-3">
+                    <div class="row align-items-center"></div>
                 </div>
-              </div>
             </div>
-            <div class="preview-item border-bottom">
-              <div class="preview-thumbnail">
-                <img src="assets/images/faces/face8.jpg" alt="image" class="rounded-circle" />
-              </div>
-              <div class="preview-item-content d-flex flex-grow">
-                <div class="flex-grow">
-                  <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                    <h6 class="preview-subject">Luella Mills</h6>
-                    <p class="text-muted text-small">10 Minutes Ago</p>
-                  </div>
-                  <p class="text-muted">Well, it seems to be working now.</p>
-                </div>
-              </div>
-            </div>
-            <div class="preview-item border-bottom">
-              <div class="preview-thumbnail">
-                <img src="assets/images/faces/face9.jpg" alt="image" class="rounded-circle" />
-              </div>
-              <div class="preview-item-content d-flex flex-grow">
-                <div class="flex-grow">
-                  <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                    <h6 class="preview-subject">Ethel Kelly</h6>
-                    <p class="text-muted text-small">2 Hours Ago</p>
-                  </div>
-                  <p class="text-muted">Please review the tickets</p>
-                </div>
-              </div>
-            </div>
-            <div class="preview-item border-bottom">
-              <div class="preview-thumbnail">
-                <img src="assets/images/faces/face11.jpg" alt="image" class="rounded-circle" />
-              </div>
-              <div class="preview-item-content d-flex flex-grow">
-                <div class="flex-grow">
-                  <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                    <h6 class="preview-subject">Herman May</h6>
-                    <p class="text-muted text-small">4 Hours Ago</p>
-                  </div>
-                  <p class="text-muted">Thanks a lot. It was easy to fix it .</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-    <div class="col-md-6 col-xl-4 grid-margin stretch-card">
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">Portfolio Slide</h4>
-          <div class="owl-carousel owl-theme full-width owl-carousel-dash portfolio-carousel" id="owl-carousel-basic">
-            <div class="item">
-              <img src="assets/images/dashboard/Rectangle.jpg" alt="">
-            </div>
-            <div class="item">
-              <img src="assets/images/dashboard/Img_5.jpg" alt="">
-            </div>
-            <div class="item">
-              <img src="assets/images/dashboard/img_6.jpg" alt="">
-            </div>
-          </div>
-          <div class="d-flex py-4">
-            <div class="preview-list w-100">
-              <div class="preview-item p-0">
-                <div class="preview-thumbnail">
-                  <img src="assets/images/faces/face12.jpg" class="rounded-circle" alt="">
+    <div class="row">
+        <div class="col-12 grid-margin">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">list of patient details</h4>
+                    <div class="table-responsive">
+                        <div class="container">
+                            <table class="table">
+                                <tr>
+                                    <th>name</th>
+                                    <th>email</th>
+                                    <th>phone</th>
+                                    <th>address</th>
+                                    <th>action</th>
+                                </tr>
+                                @foreach($patientdata as $p)
+                                <tr>
+                                    <td>{{$p->name}}</td>
+                                    <td>{{$p->email}}</td>
+                                    <td>{{$p->phone}}</td>
+                                    <td>{{$p->address}}</td>
+                                    <td>
+                                        <a
+                                            href="{{ URL::to('/delete/'. $p->id) }}"
+                                            onclick="return confirm('are you sure to CANCEL this')"
+                                            class="btn btn-danger"
+                                            >CANCEL</a
+                                        >
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </table>
+                        </div>
+                    </div>
                 </div>
-                <div class="preview-item-content d-flex flex-grow">
-                  <div class="flex-grow">
-                    <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                      <h6 class="preview-subject">CeeCee Bass</h6>
-                      <p class="text-muted text-small">4 Hours Ago</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 grid-margin">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">request of patient appointments</h4>
+                    <div class="table-responsive">
+                        <div class="container">
+                            <table class="table">
+                                <tr>
+                                    <th>name</th>
+                                    <th>vaccine name</th>
+                                    <th>massage</th>
+                                    <th>phone</th>
+                                    <th>status</th>
+                                    <th>action</th>
+                                </tr>
+                                @foreach($patient as $f)
+                                <tr>
+                                    <td>{{$f->first_name}}</td>
+                                    <td>{{$f->vaccinename}}</td>
+                                    <td>{{$f->massage}}</td>
+                                    <td>{{$f->phone}}</td>
+                                    <td>{{$f->status}}</td>
+                                    <td>
+                                        <a
+                                            href="{{ URL::to('/reject/'. $f->id) }}"
+                                            onclick="return confirm('are you sure to reject this')"
+                                            class="btn btn-danger"
+                                            >Reject</a
+                                        >
+                                        <a
+                                            href="{{ URL::to('/approved/'. $f->id) }}"
+                                            onclick="return confirm('are you sure to approved this')"
+                                            class="btn btn-success"
+                                            >Approve</a
+                                        >
+                                        <a
+                                            href="{{ route('addreports') }}"
+                                            class="btn border-white"
+                                            >Add Reports</a
+                                        >
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 grid-margin">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">All Patient Reports Details</h4>
+                    <div class="table-responsive">
+                        <div class="container">
+                            <table class="table">
+                                <tr>
+                                    <th>patient id</th>
+                                    <th>Blood_Group</th>
+                                    <th>Fever</th>
+                                    <th>Flu</th>
+                                    <th>Appetite</th>
+                                    <th>Cholestrol</th>
+                                    <th>BP</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                                @foreach($patientreports as $p)
+                                <tr>
+                                    <td>{{$p->patient_name}}</td>
+                                    <td>{{$p->Blood_Group}}</td>
+                                    <td>{{$p->Fever}}</td>
+                                    <td>{{$p->Flu}}</td>
+                                    <td>{{$p->Appetite}}</td>
+                                    <td>{{$p->Cholestrol}}</td>
+                                    <td>{{$p->BP}}</td>
+                                    <td>{{$p->status}}</td>
+                                    <td>
+                                        <a
+                                            href="{{ URL::to('/delete/'. $p->id) }}"
+                                            onclick="return confirm('are you sure to CANCEL this')"
+                                            class="btn btn-danger"
+                                            >CANCEL</a
+                                        >
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-xl-4 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex flex-row justify-content-between">
+                        <h4 class="card-title">Messages</h4>
+                        <p class="text-muted mb-1 small">View all</p>
+                    </div>
+                    <div class="preview-list">
+                        <div class="preview-item border-bottom">
+                            <div class="preview-thumbnail">
+                                <img
+                                    src="assets/images/faces/face6.jpg"
+                                    alt="image"
+                                    class="rounded-circle"
+                                />
+                            </div>
+                            <div class="preview-item-content d-flex flex-grow">
+                                <div class="flex-grow">
+                                    <div
+                                        class="d-flex d-md-block d-xl-flex justify-content-between"
+                                    >
+                                        <h6 class="preview-subject">Leonard</h6>
+                                        <p class="text-muted text-small">
+                                            5 minutes ago
+                                        </p>
+                                    </div>
+                                    <p class="text-muted">
+                                        Well, it seems to be working now.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="preview-item border-bottom">
+                            <div class="preview-thumbnail">
+                                <img
+                                    src="assets/images/faces/face8.jpg"
+                                    alt="image"
+                                    class="rounded-circle"
+                                />
+                            </div>
+                            <div class="preview-item-content d-flex flex-grow">
+                                <div class="flex-grow">
+                                    <div
+                                        class="d-flex d-md-block d-xl-flex justify-content-between"
+                                    >
+                                        <h6 class="preview-subject">
+                                            Luella Mills
+                                        </h6>
+                                        <p class="text-muted text-small">
+                                            10 Minutes Ago
+                                        </p>
+                                    </div>
+                                    <p class="text-muted">
+                                        Well, it seems to be working now.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="preview-item border-bottom">
+                            <div class="preview-thumbnail">
+                                <img
+                                    src="assets/images/faces/face9.jpg"
+                                    alt="image"
+                                    class="rounded-circle"
+                                />
+                            </div>
+                            <div class="preview-item-content d-flex flex-grow">
+                                <div class="flex-grow">
+                                    <div
+                                        class="d-flex d-md-block d-xl-flex justify-content-between"
+                                    >
+                                        <h6 class="preview-subject">
+                                            Ethel Kelly
+                                        </h6>
+                                        <p class="text-muted text-small">
+                                            2 Hours Ago
+                                        </p>
+                                    </div>
+                                    <p class="text-muted">
+                                        Please review the tickets
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="preview-item border-bottom">
+                            <div class="preview-thumbnail">
+                                <img
+                                    src="assets/images/faces/face11.jpg"
+                                    alt="image"
+                                    class="rounded-circle"
+                                />
+                            </div>
+                            <div class="preview-item-content d-flex flex-grow">
+                                <div class="flex-grow">
+                                    <div
+                                        class="d-flex d-md-block d-xl-flex justify-content-between"
+                                    >
+                                        <h6 class="preview-subject">
+                                            Herman May
+                                        </h6>
+                                        <p class="text-muted text-small">
+                                            4 Hours Ago
+                                        </p>
+                                    </div>
+                                    <p class="text-muted">
+                                        Thanks a lot. It was easy to fix it .
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-4 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Portfolio Slide</h4>
+                    <div
+                        class="owl-carousel owl-theme full-width owl-carousel-dash portfolio-carousel"
+                        id="owl-carousel-basic"
+                    >
+                        <div class="item">
+                            <img
+                                src="assets/images/dashboard/Rectangle.jpg"
+                                alt=""
+                            />
+                        </div>
+                        <div class="item">
+                            <img
+                                src="assets/images/dashboard/Img_5.jpg"
+                                alt=""
+                            />
+                        </div>
+                        <div class="item">
+                            <img
+                                src="assets/images/dashboard/img_6.jpg"
+                                alt=""
+                            />
+                        </div>
+                    </div>
+                    <div class="d-flex py-4">
+                        <div class="preview-list w-100">
+                            <div class="preview-item p-0">
+                                <div class="preview-thumbnail">
+                                    <img
+                                        src="assets/images/faces/face12.jpg"
+                                        class="rounded-circle"
+                                        alt=""
+                                    />
+                                </div>
+                                <div
+                                    class="preview-item-content d-flex flex-grow"
+                                >
+                                    <div class="flex-grow">
+                                        <div
+                                            class="d-flex d-md-block d-xl-flex justify-content-between"
+                                        >
+                                            <h6 class="preview-subject">
+                                                CeeCee Bass
+                                            </h6>
+                                            <p class="text-muted text-small">
+                                                4 Hours Ago
+                                            </p>
+                                        </div>
+                                        <p class="text-muted">
+                                            Well, it seems to be working now.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <p class="text-muted">Well, it seems to be working now.</p>
-                  </div>
+                    <div class="progress progress-md portfolio-progress">
+                        <div
+                            class="progress-bar bg-success"
+                            role="progressbar"
+                            style="width: 50%"
+                            aria-valuenow="25"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                        ></div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-          <p class="text-muted">Well, it seems to be working now. </p>
-          <div class="progress progress-md portfolio-progress">
-            <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
         </div>
-      </div>
     </div>
-    <div class="col-md-12 col-xl-4 grid-margin stretch-card">
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">To do list</h4>
-          <div class="add-items d-flex">
-            <input type="text" class="form-control todo-list-input" placeholder="enter task..">
-            <button class="add btn btn-primary todo-list-add-btn">Add</button>
-          </div>
-          <div class="list-wrapper">
-            <ul class="d-flex flex-column-reverse text-white todo-list todo-list-custom">
-              <li>
-                <div class="form-check form-check-primary">
-                  <label class="form-check-label">
-                    <input class="checkbox" type="checkbox"> Create invoice </label>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">To do list</h4>
+                    <div class="add-items d-flex">
+                        <input
+                            type="text"
+                            class="form-control todo-list-input"
+                            placeholder="enter task.."
+                        />
+                        <button class="add btn btn-primary todo-list-add-btn">
+                            Add
+                        </button>
+                    </div>
+                    <div class="list-wrapper">
+                        <ul
+                            class="d-flex flex-column text-white todo-list todo-list-custom"
+                        >
+                            <li>
+                                <div class="form-check form-check-primary">
+                                    <label class="form-check-label">
+                                        <input
+                                            class="checkbox"
+                                            type="checkbox"
+                                        />
+                                        Create E-Project
+                                    </label>
+                                </div>
+                                <i class="remove mdi mdi-close-box"></i>
+                            </li>
+                            <li>
+                                <div class="form-check form-check-primary">
+                                    <label class="form-check-label">
+                                        <input
+                                            class="checkbox"
+                                            type="checkbox"
+                                        />
+                                        Finish Front-End
+                                    </label>
+                                </div>
+                                <i class="remove mdi mdi-close-box"></i>
+                            </li>
+                            <li >
+                                <div class="form-check form-check-primary">
+                                    <label class="form-check-label">
+                                        <input
+                                            class="checkbox"
+                                            type="checkbox"
+                                           
+                                        />
+                                        Finish Back-End
+                                    </label>
+                                </div>
+                                <i class="remove mdi mdi-close-box"></i>
+                            </li>
+                            <li class="completed">
+                                <div class="form-check form-check-primary">
+                                    <label class="form-check-label">
+                                        <input
+                                            class="checkbox"
+                                            type="checkbox"
+                                            checked
+                                        />
+                                        Prepare for Presentation
+                                    </label>
+                                </div>
+                                <i class="remove mdi mdi-close-box"></i>
+                            </li>
+                            <li>
+                                <div class="form-check form-check-primary">
+                                    <label class="form-check-label">
+                                        <input
+                                            class="checkbox"
+                                            type="checkbox"
+                                        />
+                                        Party Hard
+                                    </label>
+                                </div>
+                                <i class="remove mdi mdi-close-box"></i>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <i class="remove mdi mdi-close-box"></i>
-              </li>
-              <li>
-                <div class="form-check form-check-primary">
-                  <label class="form-check-label">
-                    <input class="checkbox" type="checkbox"> Meeting with Alita </label>
-                </div>
-                <i class="remove mdi mdi-close-box"></i>
-              </li>
-              <li class="completed">
-                <div class="form-check form-check-primary">
-                  <label class="form-check-label">
-                    <input class="checkbox" type="checkbox" checked> Prepare for presentation </label>
-                </div>
-                <i class="remove mdi mdi-close-box"></i>
-              </li>
-              <li>
-                <div class="form-check form-check-primary">
-                  <label class="form-check-label">
-                    <input class="checkbox" type="checkbox"> Plan weekend outing </label>
-                </div>
-                <i class="remove mdi mdi-close-box"></i>
-              </li>
-              <li>
-                <div class="form-check form-check-primary">
-                  <label class="form-check-label">
-                    <input class="checkbox" type="checkbox"> Pick up kids from school </label>
-                </div>
-                <i class="remove mdi mdi-close-box"></i>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">Visitors by Countries</h4>
-          <div class="row">
-            <div class="col-md-5">
-              <div class="table-responsive">
-                <table class="table">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <i class="flag-icon flag-icon-us"></i>
-                      </td>
-                      <td>USA</td>
-                      <td class="text-right"> 1500 </td>
-                      <td class="text-right font-weight-medium"> 56.35% </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <i class="flag-icon flag-icon-de"></i>
-                      </td>
-                      <td>Germany</td>
-                      <td class="text-right"> 800 </td>
-                      <td class="text-right font-weight-medium"> 33.25% </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <i class="flag-icon flag-icon-au"></i>
-                      </td>
-                      <td>Australia</td>
-                      <td class="text-right"> 760 </td>
-                      <td class="text-right font-weight-medium"> 15.45% </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <i class="flag-icon flag-icon-gb"></i>
-                      </td>
-                      <td>United Kingdom</td>
-                      <td class="text-right"> 450 </td>
-                      <td class="text-right font-weight-medium"> 25.00% </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <i class="flag-icon flag-icon-ro"></i>
-                      </td>
-                      <td>Romania</td>
-                      <td class="text-right"> 620 </td>
-                      <td class="text-right font-weight-medium"> 10.25% </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <i class="flag-icon flag-icon-br"></i>
-                      </td>
-                      <td>Brasil</td>
-                      <td class="text-right"> 230 </td>
-                      <td class="text-right font-weight-medium"> 75.00% </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
             </div>
-            <div class="col-md-7">
-              <div id="audience-map" class="vector-map"></div>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
+    <div class="row mt-2">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Visitors by Countries</h4>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <i
+                                                    class="flag-icon flag-icon-us"
+                                                ></i>
+                                            </td>
+                                            <td>USA</td>
+                                            <td class="text-right">1500</td>
+                                            <td
+                                                class="text-right font-weight-medium"
+                                            >
+                                                56.35%
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <i
+                                                    class="flag-icon flag-icon-de"
+                                                ></i>
+                                            </td>
+                                            <td>Germany</td>
+                                            <td class="text-right">800</td>
+                                            <td
+                                                class="text-right font-weight-medium"
+                                            >
+                                                33.25%
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <i
+                                                    class="flag-icon flag-icon-au"
+                                                ></i>
+                                            </td>
+                                            <td>Australia</td>
+                                            <td class="text-right">760</td>
+                                            <td
+                                                class="text-right font-weight-medium"
+                                            >
+                                                15.45%
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <i
+                                                    class="flag-icon flag-icon-gb"
+                                                ></i>
+                                            </td>
+                                            <td>United Kingdom</td>
+                                            <td class="text-right">450</td>
+                                            <td
+                                                class="text-right font-weight-medium"
+                                            >
+                                                25.00%
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <i
+                                                    class="flag-icon flag-icon-ro"
+                                                ></i>
+                                            </td>
+                                            <td>Romania</td>
+                                            <td class="text-right">620</td>
+                                            <td
+                                                class="text-right font-weight-medium"
+                                            >
+                                                10.25%
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <i
+                                                    class="flag-icon flag-icon-br"
+                                                ></i>
+                                            </td>
+                                            <td>Brasil</td>
+                                            <td class="text-right">230</td>
+                                            <td
+                                                class="text-right font-weight-medium"
+                                            >
+                                                75.00%
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div id="audience-map" class="vector-map"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

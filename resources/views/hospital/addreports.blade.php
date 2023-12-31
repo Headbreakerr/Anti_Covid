@@ -85,16 +85,17 @@
                         <label for="exampleInputEmail3">Cholestrol Level</label>
                         <!-- <input type="text" style="color: black;" class="form-control bg-white" id="exampleInputEmail6" placeholder="Cholestrol" name="cholestrol"> -->
                         <select  class="form-control bg-white" id="exampleInputEmail6" placeholder="Cholestrol" name="cholestrol">
-                          <option value="High">High</option>
-                          <option value="Severe">Severe</option>
                           <option value="Mild">Mild</option>
                           <option value="Low">Low</option>
+                          <option value="Moderate">Moderate</option>
                           <option value="High">High</option>
+                          <option value="Severe">Severe</option>
+                          
                         </select>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail3">Blood Pressure Level</label>
-                        <input type="number" style="color: black;" class="form-control bg-white" id="exampleInputEmail7" placeholder="BP" name="bp">
+                        <input type="number" min="80" max="200" style="color: black;" class="form-control bg-white" id="exampleInputEmail7" placeholder="BP" name="bp">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail3">Status</label>

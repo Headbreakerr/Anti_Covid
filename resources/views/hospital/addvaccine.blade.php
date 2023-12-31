@@ -22,7 +22,7 @@
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">Add Vaccine</h4>
-                    <p class="card-description"> Add Vaccine </p>
+                    
                     <form class="forms-sample" action="{{route('vaccine')}}" method="post">
                         @csrf
                       <div class="form-group">

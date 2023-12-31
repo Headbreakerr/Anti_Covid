@@ -30,7 +30,10 @@
             <th>BP</th>
             <th>Status</th>
             <th>Action</th>
-            <th><a href="{{URL::to('/excelhos')}}" class="btn btn-warning">Download Excel</a></th>
+            <th>
+              <a href="{{URL::to('/excelhos')}}" class="btn btn-warning btn-block">Download Excel</a>
+
+            </th>
         </tr>
        @foreach($patientreports as $p)
        <tr>
@@ -48,17 +51,17 @@
         </td>
        </tr>
        @endforeach
-    </table>
+       
+      </table>
   </div>
-
-          <!-- content-wrapper ends -->
-          <!-- partial:partials/_footer.html -->
-          <!-- partial -->
-        </div>
-        <!-- main-panel ends -->
-      </div>
-      <!-- page-body-wrapper ends -->
-    </div>
+  <!-- content-wrapper ends -->
+  <!-- partial:partials/_footer.html -->
+  <!-- partial -->
+</div>
+<!-- main-panel ends -->
+</div>
+<!-- page-body-wrapper ends -->
+</div>
     <!-- container-scroller -->
     <!-- plugins:js -->
   @include('hospital.js')
