@@ -9,7 +9,8 @@ use App\Exports\reportsexports;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use App\Exports\vaccineExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class admincontroller extends Controller
 {
@@ -50,6 +51,4 @@ class admincontroller extends Controller
       public function exporttoexcel(){
         return Excel::download(new reportsexports,'reportsexcel.xlsx');
       }
-
-
 }

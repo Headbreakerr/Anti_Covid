@@ -90,7 +90,6 @@ Route::middleware('auth' , 'role:admin')->group(function () {
     Route::get('/list-of-hospital-detail', [admincontroller::class,'listofhospital'])->name('list-of-hospital');
     Route::get('/all-vaccine', [admincontroller::class,'allvaccine'])->name('allvaccine');
     Route::get('/all-reports', [admincontroller::class,'allreports'])->name('allreports');
-    Route::get('/Book-Appointments-detals', [admincontroller::class,'bookdetails'])->name('bookdetails');
     
 });
 Route::middleware('auth', 'role:hospital')->group(function () {

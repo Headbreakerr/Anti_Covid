@@ -1,6 +1,6 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <a class="sidebar-brand brand-logo" href="{{route('admin-dashboard')}}"><img src="assets/images/logo.svg" alt="logo" /></a>
+          <a class="sidebar-brand brand-logo" href="index.html"><img src="assets/images/logo.svg" alt="logo" /></a>
           <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
         </div>
         <ul class="nav">
@@ -15,7 +15,7 @@
                   <h5 class="mb-0 font-weight-normal">{{ Auth::user()->name }}</h5>
                 </div>
               </div>
-             
+              <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
               <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
                 <a href="#" class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
