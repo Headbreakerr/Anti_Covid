@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\vaccine;
 use App\Models\appointment;
+use App\Models\hospital;
 use App\Models\reports;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -133,7 +134,7 @@ class patientcontroller extends Controller
     }
 
     public function addhospital(Request $req){
-        $hospital = new User();
+        $hospital = new hospital();
         $hospital->name = $req->name;
         $hospital->email = $req->email;
         $hospital->password = hash::make($req->password);
@@ -147,6 +148,7 @@ class patientcontroller extends Controller
         $hospital->save();
         return redirect()->back();
     }
+
 
     public function registerhospital(){
         return view('main-website.components.add-hospital');

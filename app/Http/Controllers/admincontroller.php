@@ -11,6 +11,7 @@ use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Exports\vaccineExport;
+use App\Models\hospital;
 
 class admincontroller extends Controller
 {
@@ -60,5 +61,30 @@ class admincontroller extends Controller
         $userid->delete();
         return redirect()->back();
       }
+
+      public function addhospital(){
+        $hospital = hospital::all();
+        return view ('admin.add-hospital',compact('hospital'));
+      }
+
+      public function atc(Request $req){
+        $name = $req->post('name');
+        $phone = $req->post('phone');
+        $address = $req->post('address');
+        $email = $req->post('email');
+        $password = $req->post('password');
+        $role = $req->post('role');
+        $image = $req->post('image');
+
+        $add = new User();
+        $add->name = $name;
+        $add->phone = $phone;
+        $add->address = $address;
+        $add->email = $email;
+        $add->password = $password;
+        $add->role = $role;
+        $add->image = $image;
+        $add->save();
+    }
        
 }

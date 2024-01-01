@@ -92,6 +92,8 @@ Route::middleware('auth' , 'role:admin')->group(function () {
     Route::get('/booking-details', [admincontroller::class,'bookdetails'])->name('bookdetails');
     Route::get('/exceladmin',[admincontroller::class,'exporttoexcel']);
     Route::get('/deletead/{id}',[admincontroller::class,'deleteadmin']);
+    Route::get('/hospital-approvel-request',[admincontroller::class,'addhospital'])->name('addhospital');
+    Route::post('/hospital-approvel-request',[admincontroller::class,'atc'])->name('addhospital');
 });
 Route::middleware('auth', 'role:hospital')->group(function () {
     Route::get('/hospitaldashboard', [hospitalcontroller::class,'hospitaldashboard'])->name('hospital-dashboard');
@@ -106,7 +108,7 @@ Route::middleware('auth', 'role:hospital')->group(function () {
     Route::post('/add-reports', [hospitalcontroller::class,'addreports'])->name('addreports');
     Route::get('/add-reports-details', [hospitalcontroller::class,'allreports'])->name('Allreports');
     Route::get('/excelhos',[hospitalcontroller::class,'exporttoexcel']);
-    Route::get('/deletehos/{id}',[hospitalcontroller::class,'delete']);
+    Route::get('/deletehos/{id}',[hospitalcontroller::class,'delete']); 
 
 });
 Route::middleware('auth','role:patient')->group(function () {

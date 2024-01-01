@@ -5,7 +5,7 @@
 @include('main-website.components.hospitalnavbar')
 <section class="ftco-section ftco-no-pt ftc-no-pb">
     <h1 style="text-align: center;">Add Hospital</h1>
-<form action="{{route('register')}}" method="post" enctype="multipart/form-data">
+<form action="{{route('registerh')}}" method="post" enctype="multipart/form-data">
     @csrf
     <table class="table">
         <tr>
