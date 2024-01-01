@@ -23,11 +23,10 @@ class myseeder extends Seeder
                 'email'=> 'admin@gmail.com',
                 'password'=> Hash::make('111'),
                 'role' => 'admin',
+                'image' => '',
+
             ],
-
             // hospital
-
-
             [
                 'name' => 'hospital',
                 'phone' => '094382747362',
@@ -47,6 +46,8 @@ class myseeder extends Seeder
                 'email'=> 'agakhan@gmail.com',
                 'password'=> Hash::make('111'),
                 'role' => 'hospital',
+                'image' => '/images1/832821',
+
             ],
 
 
@@ -54,11 +55,13 @@ class myseeder extends Seeder
 
             [
                 'name' => 'patient',
-                'phone' => 'null',
-                'address' => 'null',
+                'phone' => '009988776544',
+                'address' => 'lyari karachi',
                 'email'=> 'patient@gmail.com',
                 'password'=> Hash::make('111'),
                 'role' => 'patient',  
+                'image' => '/images1/832821',
+
             ]
         ]);
 

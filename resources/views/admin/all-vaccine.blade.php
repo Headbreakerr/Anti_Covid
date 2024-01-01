@@ -30,7 +30,7 @@
         <td>{{$v->vaccinename}}</td>
         <td>{{$v->vaccinemanufacturing}}</td>
         <td>
-        <a href="{{ URL::to('/delete/'. $v->id) }}" onclick="return confirm('are you sure to CANCEL this')" class="btn btn-danger" >CANCEL</a>
+        <a href="{{ URL::to('/deletead/'. $v->id) }}" onclick="return confirm('are you sure to CANCEL this')" class="btn btn-danger" >CANCEL</a>
 
         </td>
        </tr>

@@ -59,6 +59,12 @@ class patientcontroller extends Controller
         return view('main-website.index',compact('vaccinedata'));
     }
 
+    public function deleteapp($id){
+        $userid = appointment::find($id);
+        $userid->delete();
+        return redirect()->back();
+    }
+
     
 
 

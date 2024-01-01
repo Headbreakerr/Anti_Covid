@@ -50,10 +50,7 @@ class homecontroller extends Controller
 
     function delete($id){
         $userid = appointment::find($id);
-        $userid = reports::find($id);
-        $userid = vaccine::find($id);
         $userid->delete();
-
         return redirect()->back();
     }
 

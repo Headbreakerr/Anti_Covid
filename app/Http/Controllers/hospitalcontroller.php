@@ -38,10 +38,10 @@ public function showappointa(){
 }
 
 
-function delete($id){
-  $userid = appointment::find($id);
+public function delete($id){
+  $userid = reports::find($id);
+  $userid = User::find($id);
   $userid->delete();
-
   return redirect()->back();
 }
 
@@ -83,7 +83,7 @@ public function allreports(){
 }
 
 public function exporttoexcel(){
-  return Excel::download(new reportsexports,'reportsexcel.xlsx');
+  return Excel::download(new reportsexports,'ReportsExcel.xlsx');
 }
       
 }

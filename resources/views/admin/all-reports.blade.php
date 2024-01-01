@@ -45,7 +45,7 @@
               <td>{{$p->BP}}</td>
               <td>{{$p->status}}</td>
               <td>
-                <a href="{{ URL::to('/delete/'. $p->id) }}" onclick="return confirm('are you sure to CANCEL this')" class="btn btn-danger">CANCEL</a>
+                <a href="{{ URL::to('/deletead/'. $p->id) }}" onclick="return confirm('are you sure to CANCEL this')" class="btn btn-danger">CANCEL</a>
 
               </td>
             </tr>

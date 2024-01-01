@@ -27,7 +27,7 @@
                 <td>{{$f->status}}</td>
                 <td>
                     <a
-                        href="{{ URL::to('/delete/'. $f->id) }}"
+                        href="{{ URL::to('/deleteapp/'. $f->id) }}"
                         onclick="return confirm('are you sure to delete this')"
                         class="btn btn-danger"
                         >Cancel</a

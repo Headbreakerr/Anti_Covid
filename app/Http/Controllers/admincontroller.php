@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\appointment;
 use App\Models\vaccine;
 use App\Models\reports;
+use App\Models\User;
 use App\Exports\reportsexports;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
@@ -48,6 +49,16 @@ class admincontroller extends Controller
       }
       
       public function exporttoexcel(){
-        return Excel::download(new reportsexports,'reportsexcel.xlsx');
+        return Excel::download(new reportsexports,'ReportsExcel.xlsx');
       }
+      
+      public function deleteadmin($id){
+        $userid = vaccine::find($id);
+        $userid = appointment::find($id);
+        $userid = reports::find($id);
+        $userid = User::find($id);
+        $userid->delete();
+        return redirect()->back();
+      }
+       
 }

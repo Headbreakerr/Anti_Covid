@@ -8,6 +8,7 @@
             </div>
         </div>
     </div>
+    <br>
     <div class="row">
         <div class="col-12 grid-margin">
             <div class="card">
@@ -31,7 +32,7 @@
                                     <td>{{$p->address}}</td>
                                     <td>
                                         <a
-                                            href="{{ URL::to('/delete/'. $p->id) }}"
+                                            href="{{ URL::to('/deletehos/'. $p->id) }}"
                                             onclick="return confirm('are you sure to CANCEL this')"
                                             class="btn btn-danger"
                                             >CANCEL</a

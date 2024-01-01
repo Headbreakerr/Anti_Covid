@@ -63,7 +63,6 @@ route::get('/myappointments',[patientcontroller::class,'myappoint'])->name('myap
 // Route::get('/home', [homecontroller::class,'showhospitala']);
 // Route::post('/appoint', [homecontroller::class,'appoint'])->name('appoint');
 // Route::get('/myappoint', [homecontroller::class,'myappoint'])->name('myappoint');
-Route::get('/delete/{id}', [homecontroller::class,'delete'])->name('delete');
 Route::get('/reject/{id}', [homecontroller::class,'reject'])->name('reject');
 Route::get('/approved/{id}', [homecontroller::class,'approved'])->name('approved');
 
@@ -92,7 +91,7 @@ Route::middleware('auth' , 'role:admin')->group(function () {
     Route::get('/all-reports', [admincontroller::class,'allreports'])->name('allreports');
     Route::get('/booking-details', [admincontroller::class,'bookdetails'])->name('bookdetails');
     Route::get('/exceladmin',[admincontroller::class,'exporttoexcel']);
-    Route::get('/delete/{id}', [admincontroller::class,'delete']); 
+    Route::get('/deletead/{id}',[admincontroller::class,'deleteadmin']);
 });
 Route::middleware('auth', 'role:hospital')->group(function () {
     Route::get('/hospitaldashboard', [hospitalcontroller::class,'hospitaldashboard'])->name('hospital-dashboard');
@@ -107,7 +106,8 @@ Route::middleware('auth', 'role:hospital')->group(function () {
     Route::post('/add-reports', [hospitalcontroller::class,'addreports'])->name('addreports');
     Route::get('/add-reports-details', [hospitalcontroller::class,'allreports'])->name('Allreports');
     Route::get('/excelhos',[hospitalcontroller::class,'exporttoexcel']);
-    Route::get('/delete/{id}', [homecontroller::class,'delete']); 
+    Route::get('/deletehos/{id}',[hospitalcontroller::class,'delete']);
+
 });
 Route::middleware('auth','role:patient')->group(function () {
     Route::get('/home',[patientcontroller::class,'showhospitaldata'])->name('patient');
@@ -120,6 +120,7 @@ Route::middleware('auth','role:patient')->group(function () {
     route::post('/home',[patientcontroller::class,'appoint'])->name('appointment');
     route::post('/appointments',[patientcontroller::class,'appoint'])->name('appointment');
     route::get('/myappointments',[patientcontroller::class,'myappoint'])->name('myappoint');
+    Route::get('/deleteapp/{id}',[patientcontroller::class,'deleteapp']);
 });
 
 require __DIR__.'/auth.php';
