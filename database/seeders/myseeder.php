@@ -24,29 +24,6 @@ class myseeder extends Seeder
                 'password'=> Hash::make('111'),
                 'role' => 'admin',
             ],
-            // hospital
-            [
-                'name' => 'hospital',
-                'phone' => '094382747362',
-                'address' => 'kharadar karachi lyari',
-                'email'=> 'hospital@gmail.com',
-                'password'=> Hash::make('111'),
-                'role' => 'hospital',
-            ],
-
-            // hospital
-
-
-            [
-                'name' => 'aga khan hospital',
-                'phone' => '094382747362',
-                'address' => 'karachi lyari',
-                'email'=> 'agakhan@gmail.com',
-                'password'=> Hash::make('111'),
-                'role' => 'hospital',
-
-            ],
-
 
             // patient
 
